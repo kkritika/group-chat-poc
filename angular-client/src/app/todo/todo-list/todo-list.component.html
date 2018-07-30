@@ -1,0 +1,48 @@
+<div>
+  Rooms
+</div>
+<div>
+  <aside class="col-md-2" style="padding:0">
+    <nav class="submenu col-md-12" style="float: left;padding:0 ">
+      <ul class="list-group">
+        <li class="list-unstyled list-group-item" style="cursor: pointer; background-color: #f0f8ff;" *ngFor="let room of rooms">
+          <div (click)="switchRoom(room)">
+            <span class="float-left rounded " style="display: inline-block;"><span class="glyphicon glyphicon-user" style="margin-left: 3px;width:30px; height: 30px; color: white; background-color: #cccccc; padding: 8px; border-radius: 50%"></span></span>
+            <div class="list-group-item-body" style="display: inline-block;">
+              <div class="list-group-item-heading"> {{room}}</div>
+            </div>
+          </div>
+        </li>
+      </ul>
+    </nav>
+  </aside>
+  <div class="col-md-9" style="padding:0">
+    <div class="content">
+      <div class="header" style="">
+        <header>
+          <h3>{{newRoom}}</h3>
+        </header>
+      </div>
+    </div>
+    <div class="content-body" style="padding: 30px;">
+      <div class="chat">
+        <div id="messages">
+          <div class="chat-bubble-wrapper">
+            <div><img src="">
+              <div class="bubble">Hello</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="chat-input-wrapper" style="padding: 30px;">
+      <form>
+        <!-- <input type="text" name="" placeholder="Type your message here"  [(ngModel)]="user.message"  > -->
+        <input [(ngModel)]="user.message" name="message" required>
+        <button type="submit" (click)="sendMessage(user)">Send</button>
+      </form>
+    </div>
+  </div>
+</div>
+
+<!-- new message -->
